@@ -1,28 +1,21 @@
-# -*- ecoding: utf-8 -*-
-# @ModuleName: setup
-# @Function: 
-# @Author: ctx_phi
-# @Craete Time: 2021/11/4 10:51
+from setuptools import setup, find_packages
+
+print(find_packages())
+
+requires = [
+    'requests>=2.27.1',
+    'loguru>=0.6.0',
+    'lxml==4.6.3',
+    'pydantic==1.9.1',
+    'tqdm==4.62.2',
+]
 
 
-import setuptools
-
-with open("README.md", "r") as fh:
-  long_description = fh.read()
-
-setuptools.setup(
-  name="phi_tools",
-  version="0.0.2",
-  author="phimes",
-  author_email="phimes@163.com",
-  description="A collections of often use functions",
-  long_description=long_description,
-  long_description_content_type="text/markdown",
-  url="https://github.com/re0phimes/phi-s_ultis",
-  packages=setuptools.find_packages(),
-  classifiers=[
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
-  ],
+setup(
+    name="Encrawler",
+    version="0.1.14",
+    packages=find_packages(),
+    description="增加境外bing news search",
+    author="phimes",
+    author_email="phimes@163.com",
 )

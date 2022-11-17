@@ -17,5 +17,19 @@ def datelist(self, beginDate, endDate):
     return date_l
 
 
-if __name__ =='__main__':
-    None 
+def caltime(func):
+    def inner(*args, **kwargs):
+        start = datetime.now()
+        res = func(*args, **kwargs)
+        end = datetime.now()
+        print("methods: %s ,运行共计耗时: %s s"%(func.__name__,  end - start))
+        return res
+    return inner
+
+# if __name__ =='__main__':
+    # @calcMethodsTimes
+    # def test():
+    #     print('test')
+    
+    # test()
+
