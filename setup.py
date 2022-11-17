@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
   name="phi_tools",
-  version="0.0.1",
+  version="0.0.2",
   author="phimes",
   author_email="phimes@163.com",
   description="A collections of often use functions",
