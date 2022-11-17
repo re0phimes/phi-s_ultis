@@ -16,7 +16,7 @@ requires = [
 
 setuptools.setup(
   name="phi_tools",
-  version="0.0.4",
+  version="0.0.5",
   author="phimes",
   author_email="phimes@163.com",
   description="A collections of often use functions",

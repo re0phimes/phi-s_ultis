@@ -1,35 +1,45 @@
 # -*- ecoding: utf-8 -*-
-# @ModuleName: phi_tool.py
-# @Function: 一些工具方法
+# @ModuleName: __init__.py
+# @Function: 
 # @Author: ctx_phi
-# @Craete Time: 2021/11/4 10:37
-
-import pandas as pd
-from datetime import datetime
+# @Craete Time: 2021/11/4 10:50
 
 
-def datelist(self, beginDate, endDate):
-    '''
-    根据st和et生成日期列表
-    '''
-    # beginDate, endDate是形如‘20160601’的字符串或datetime格式
-    date_l=[datetime.strftime(x,'%Y-%m-%d %H:%M:%S') for x in list(pd.date_range(start=beginDate, end=endDate))]
-    return date_l
+from __future__ import annotations
+
+from phi_tools.time_tools import caltime, datelist
+# 抄的pandas的, 学习pandas的import机制
 
 
-def caltime(func):
-    def inner(*args, **kwargs):
-        start = datetime.now()
-        res = func(*args, **kwargs)
-        end = datetime.now()
-        print("methods: %s ,运行共计耗时: %s s"%(func.__name__,  end - start))
-        return res
-    return inner
+__docformat__ = "restructuredtext"
 
-# if __name__ =='__main__':
-    # @calcMethodsTimes
-    # def test():
-    #     print('test')
-    
-    # test()
+# Let users know if they're missing any of our hard dependencies
+_hard_dependencies = ("pandas")
+_missing_dependencies = []
+
+for _dependency in _hard_dependencies:
+    try:
+        __import__(_dependency)
+    except ImportError as _e:
+        _missing_dependencies.append(f"{_dependency}: {_e}")
+
+if _missing_dependencies:
+    raise ImportError(
+        "Unable to import required dependencies:\n" + "\n".join(_missing_dependencies)
+    )
+del _hard_dependencies, _dependency, _missing_dependencies
+
+
+
+
+
+
+# from time_tools import calFuncTime, datelist
+
+
+
+
+__all__ = [
+    "caltime", datelist",
+]
 

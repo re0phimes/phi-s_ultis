@@ -17,7 +17,7 @@ def datelist(self, beginDate, endDate):
     return date_l
 
 
-def calcMethodsTimes(func):
+def caltime(func):
     def inner(*args, **kwargs):
         start = datetime.now()
         res = func(*args, **kwargs)
